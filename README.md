@@ -1,6 +1,6 @@
 ![A simple computer, running a program, with a W65C02S (Simple) at its core.](images/fight.png)
 
-This is a component library for Dr. Carl Burch's excellent program [Logisim](http://www.cburch.com/logisim/). It includes three different variations on the W65C02S, Western Design Center's flagship 8-bit CPU/microcontroller. This chip is descended from (and largely compatible with) the venerable [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502), the low-cost CPU that powered the home computer revolution.
+This is a component library for [the Ligisim-Evolution version of](https://github.com/logisim-evolution/logisim-evolution) Dr. Carl Burch's excellent program [Logisim](http://www.cburch.com/logisim/). It includes three different variations on the W65C02S, Western Design Center's flagship 8-bit CPU/microcontroller. This chip is descended from (and largely compatible with) the venerable [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502), the low-cost CPU that powered the home computer revolution.
 
 With this component library, you can design circuits that are intended to interface with a bare W65C02S. You can also use it to design and explore low-level computer architectures that would not have been out of place in the 70's and 80's.
 

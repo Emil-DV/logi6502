@@ -218,12 +218,12 @@ public class Logi6502_PDIP40 extends Logi6502 {
 
     @Override
     protected boolean getRESB(InstanceState i) {
-        return i.getPort(PORT_RESB) != Value.TRUE;
+        return i.getPortValue(PORT_RESB) != Value.TRUE;
     }
 
     @Override
     protected boolean getPHI2(InstanceState i) {
-        Value v = i.getPort(PORT_PHI2);
+        Value v = i.getPortValue(PORT_PHI2);
         i.setPort(PORT_PHI2O, v, 1);
         if(v == Value.TRUE) {
             i.setPort(PORT_PHI1O, Value.FALSE, 1);
@@ -241,12 +241,12 @@ public class Logi6502_PDIP40 extends Logi6502 {
 
     @Override
     public boolean getIRQB(InstanceState i) {
-        return i.getPort(PORT_IRQB) == Value.FALSE;
+        return i.getPortValue(PORT_IRQB) == Value.FALSE;
     }
 
     @Override
     public boolean getNMIB(InstanceState i) {
-        return i.getPort(PORT_NMIB) == Value.FALSE;
+        return i.getPortValue(PORT_NMIB) == Value.FALSE;
     }
 
     private void boolPort(InstanceState i, int port, boolean value, int delay) {
@@ -263,7 +263,7 @@ public class Logi6502_PDIP40 extends Logi6502 {
         i.setPort(PORT_RWB, Value.UNKNOWN, 12);
     }
     private boolean checkBE(InstanceState i) {
-        if(i.getPort(PORT_BE) == Value.FALSE) {
+        if(i.getPortValue(PORT_BE) == Value.FALSE) {
             valueToBusPins(i, Value.UNKNOWN);
             return false;
         }
@@ -292,25 +292,25 @@ public class Logi6502_PDIP40 extends Logi6502 {
     public byte getD(InstanceState i) {
         byte ret = 0;
         for(int n = 0; n < 8; ++n) {
-            Value p = i.getPort(D_PINS[n]);
+            Value p = i.getPortValue(D_PINS[n]);
             if(p == Value.TRUE) ret = (byte)(ret | (1 << n));
         }
         return ret;
     }
 
     protected boolean powerOK(InstanceState i) {
-        boolean ret = i.getPort(PORT_VDD) == Value.TRUE && i.getPort(PORT_VSS) == Value.FALSE;
+        boolean ret = i.getPortValue(PORT_VDD) == Value.TRUE && i.getPortValue(PORT_VSS) == Value.FALSE;
         if(!ret)
             valueToBusPins(i, Value.UNKNOWN);
         return ret;
     }
     @Override
     public boolean getRDY(InstanceState i) {
-        return i.getPort(PORT_RDY) != Value.FALSE;
+        return i.getPortValue(PORT_RDY) != Value.FALSE;
     }
     @Override
     public boolean getSOB(InstanceState i) {
-        return i.getPort(PORT_SOB) == Value.FALSE;
+        return i.getPortValue(PORT_SOB) == Value.FALSE;
     }
     @Override
     public void setRDY(InstanceState i, boolean x) {

@@ -31,4 +31,9 @@ public class Components extends Library {
     public List<? extends Tool> getTools() {
         return tools;
     }
+    
+    public boolean removeLibrary(String str) {
+    	return true;
+    }
+
 }

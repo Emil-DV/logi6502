@@ -69,22 +69,22 @@ public class Logi6502Simple extends Logi6502 {
 
     @Override
     protected boolean getRESB(InstanceState i) {
-        return i.getPort(PORT_RESB) != Value.TRUE;
+        return i.getPortValue(PORT_RESB) != Value.TRUE;
     }
 
     @Override
     protected boolean getPHI2(InstanceState i) {
-        return i.getPort(PORT_PHI2) != Value.FALSE;
+        return i.getPortValue(PORT_PHI2) != Value.FALSE;
     }
 
     @Override
     public boolean getIRQB(InstanceState i) {
-        return i.getPort(PORT_IRQB) == Value.FALSE;
+        return i.getPortValue(PORT_IRQB) == Value.FALSE;
     }
 
     @Override
     public boolean getNMIB(InstanceState i) {
-        return i.getPort(PORT_NMIB) == Value.FALSE;
+        return i.getPortValue(PORT_NMIB) == Value.FALSE;
     }
 
     private void boolPort(InstanceState i, int port, boolean value, int delay) {
@@ -110,7 +110,7 @@ public class Logi6502Simple extends Logi6502 {
 
     @Override
     public byte getD(InstanceState i) {
-        return (byte)i.getPort(PORT_D).toIntValue();
+        return (byte)i.getPortValue(PORT_D).toLongValue();
     }
     @Override
     public void setVPB(InstanceState i, boolean x) {

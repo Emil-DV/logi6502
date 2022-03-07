@@ -78,22 +78,22 @@ public class Logi6502Expert extends Logi6502 {
 
     @Override
     protected boolean getRESB(InstanceState i) {
-        return i.getPort(PORT_RESB) != Value.TRUE;
+        return i.getPortValue(PORT_RESB) != Value.TRUE;
     }
 
     @Override
     protected boolean getPHI2(InstanceState i) {
-        return i.getPort(PORT_PHI2) != Value.FALSE;
+        return i.getPortValue(PORT_PHI2) != Value.FALSE;
     }
 
     @Override
     public boolean getIRQB(InstanceState i) {
-        return i.getPort(PORT_IRQB) == Value.FALSE;
+        return i.getPortValue(PORT_IRQB) == Value.FALSE;
     }
 
     @Override
     public boolean getNMIB(InstanceState i) {
-        return i.getPort(PORT_NMIB) == Value.FALSE;
+        return i.getPortValue(PORT_NMIB) == Value.FALSE;
     }
 
     private void boolPort(InstanceState i, int port, boolean value, int delay) {
@@ -103,7 +103,7 @@ public class Logi6502Expert extends Logi6502 {
         i.setPort(PORT_A, Value.createKnown(BitWidth.create(16), a), 12);
     }
     private boolean checkBE(InstanceState i) {
-        if(i.getPort(PORT_BE) == Value.FALSE) {
+        if(i.getPortValue(PORT_BE) == Value.FALSE) {
             i.setPort(PORT_A, Value.createUnknown(BitWidth.create(16)), 12);
             i.setPort(PORT_D, Value.createUnknown(BitWidth.create(8)), 12);
             i.setPort(PORT_RWB, Value.UNKNOWN, 12);
@@ -130,15 +130,15 @@ public class Logi6502Expert extends Logi6502 {
 
     @Override
     public byte getD(InstanceState i) {
-        return (byte)i.getPort(PORT_D).toIntValue();
+        return (byte)i.getPortValue(PORT_D).toLongValue();
     }
     @Override
     public boolean getRDY(InstanceState i) {
-        return i.getPort(PORT_RDY) != Value.FALSE;
+        return i.getPortValue(PORT_RDY) != Value.FALSE;
     }
     @Override
     public boolean getSOB(InstanceState i) {
-        return i.getPort(PORT_SOB) == Value.FALSE;
+        return i.getPortValue(PORT_SOB) == Value.FALSE;
     }
     @Override
     public void setRDY(InstanceState i, boolean x) {

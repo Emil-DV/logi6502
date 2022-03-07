@@ -10,12 +10,10 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/logisim-generic-2.7.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../Logisim/logisim-evolution/build/libs/logisim-evolution-3.5.0-all.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/Downloads/logisim-generic-2.7.1.jar!/src" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
   </component>
